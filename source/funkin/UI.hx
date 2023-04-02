@@ -45,16 +45,21 @@ class UI extends FlxSpriteGroup
 	private var stupidHealth:Float = 0;
 
 	private var timingsMap:Map<String, FlxText> = [];
-
+	private var ver:String;
 	var infoDisplay:String = CoolUtil.dashToSpace(PlayState.SONG.song);
 	var diffDisplay:String = CoolUtil.difficultyFromNumber(PlayState.storyDifficulty);
-	var engineDisplay:String = "FOREVER ENGINE v" + Main.gameVersion;
-
+	var engineDisplay:String = "Project Eve v1.0\nForever Engine V1.0.3";
+	var timeBarBG:FlxSprite;
+	var timeBar:FlxBar;
+	var timeTxt:FlxText;
+	
 	// eep
 	public function new()
 	{
 		// call the initializations and stuffs
 		super();
+		
+		
 
 		// le healthbar setup
 		var barY = FlxG.height * 0.875;
@@ -95,17 +100,7 @@ class UI extends FlxSpriteGroup
 		cornerMark.setPosition(FlxG.width - (cornerMark.width + 5), 5);
 		cornerMark.antialiasing = true;
 
-		centerMark = new FlxText(0, 0, 0, '- ${infoDisplay + " [" + diffDisplay}] -');
-		centerMark.setFormat(Paths.font('vcr.ttf'), 24, FlxColor.WHITE);
-		centerMark.setBorderStyle(OUTLINE, FlxColor.BLACK, 2);
-		add(centerMark);
-		if (Init.trueSettings.get('Downscroll'))
-			centerMark.y = (FlxG.height - centerMark.height / 2) - 30;
-		else
-			centerMark.y = (FlxG.height / 24) - 10;
-		centerMark.screenCenter(X);
-		centerMark.antialiasing = true;
-
+		
 		// counter
 		if (Init.trueSettings.get('Counter') != 'None')
 		{
