@@ -1,0 +1,17 @@
+function loadAnimations() {
+	character.frames = Paths.getSparrowAtlas('tobi');
+	character.animation.addByPrefix('idle', 'Idle anim', 24);
+
+	character.animation.addByPrefix('singUP', 'up anim', 24, false);
+	character.animation.addByPrefix('singLEFT', 'left anim', 24, false);
+	character.animation.addByPrefix('singRIGHT', 'Right anim', 24, false);
+	character.animation.addByPrefix('singDOWN', 'Down anim', 24, false);
+	
+	character.addOffset('idle', -5, 0);
+
+	character.addOffset('singUP', -47, 28);
+	character.addOffset('singLEFT', 4, -7);
+	character.addOffset('singRIGHT', -48, -5);
+	character.addOffset('singDOWN', -22, -51);
+	character.flipX = true;
+}

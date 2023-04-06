@@ -1,0 +1,26 @@
+var bg;
+
+function onCreate()
+{
+	stage.defaultCamZoom = 0.8;
+	stage.addGirlfriend = false;
+
+	bg = new FlxSprite(-500, 50);
+	bg.loadGraphic(getAsset('images/bruhh.png'));
+	bg.antialiasing = true;
+	bg.scrollFactor.set(0.9, 0.9);
+	bg.active = false;
+	add(bg);
+
+	
+
+	
+
+	// if you ever wanna fix judgements and combo on the hud
+	/**
+	PlayState.lockComboInHUD = true;
+	PlayState.comboPosition.set(0, 0);
+	**/
+}
+
+function onUpdate(elapsed) {}
